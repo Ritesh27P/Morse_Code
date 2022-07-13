@@ -19,33 +19,6 @@ MORSE_CODE_DICT = {'A': '.-', 'B': '-...',
 
 non_accept_value = ['!', '@', '#', '$', '%', '^', '&', '*', '+']
 
-def encrypt(message):
-    cipher = ''
-    for letter in message:
-        if letter != ' ':
-            cipher += MORSE_CODE_DICT[letter] + ' '
-        else:
-            cipher += ' '
-
-    return cipher
-
-
-msg = encrypt("HII")
-
-
-def decrypt(cipher):
-    message = ''
-    encrypt_list = cipher.split(" ")
-    for i in encrypt_list:
-        for j in MORSE_CODE_DICT:
-            if MORSE_CODE_DICT[j] == i:
-                message += j
-            else:
-                continue
-
-    return message
-
-
 app = Flask(__name__)
 
 
