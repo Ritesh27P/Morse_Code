@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/master/styles.css">
+</head>
+
+<body>
+    <div class="Message">
+        <form action="{{ url_for('home') }}", method="post">
+            <label for="message"><h1>Click and Enter your message here</h1></label><br><br>
+          <input type="text" id="message" name="message"><br><br>
+          <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div class="Message">
+        {% if error %}
+            <h1 class="error">{{error }}</h1>
+        {% else %}
+            <h1>{{ message }}</h1>
+        {% endif %}
+    </div>
+
+</body>
+</html>
